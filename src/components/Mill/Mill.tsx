@@ -160,11 +160,6 @@ export function Mill({ position = [5, 0, 0] }: MillProps) {
           <boxGeometry args={[4.7, 0.2, 0.2]} />
           <meshStandardMaterial color={WOOD_COLOR} roughness={0.7} />
         </mesh>
-
-        <mesh position={[0, 0, 0.16]}>
-          <boxGeometry args={[4.5, 3.5, 0.05]} />
-          <meshStandardMaterial color={LIGHT_WOOD_COLOR} roughness={0.8} side={THREE.DoubleSide} />
-        </mesh>
       </group>
 
       <group position={[0, 2.5, -3]}>

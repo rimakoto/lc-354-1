@@ -68,8 +68,8 @@ function SceneContent() {
   return (
     <>
       <SceneLighting />
-      <Environment streamWidth={8} streamLength={30} />
-      <Stream position={[0, -0.5, 0]} length={30} width={8} />
+      <Environment streamWidth={8} streamLength={40} />
+      <Stream position={[0, -0.5, 0]} length={40} width={8} />
       <WaterWheel position={[-1, 0, 0]} />
       <Mill position={[3.5, 0, 0]} />
       <SplashParticles
@@ -95,12 +95,12 @@ export function Scene({ controlsRef }: SceneProps) {
   return (
     <Canvas
       shadows
-      camera={{ position: [8, 5, 10], fov: 50 }}
+      camera={{ position: [8, 5, 10], fov: 55, near: 0.1, far: 300 }}
       gl={{ antialias: true, alpha: false }}
       dpr={[1, 2]}
     >
-      <color attach="background" args={['#87CEEB']} />
-      <fog attach="fog" args={['#87CEEB', 20, 50]} />
+      <color attach="background" args={['#B0E0FF']} />
+      <fog attach="fog" args={['#B0E0FF', 30, 80]} />
       
       <SceneContent />
       
@@ -108,10 +108,10 @@ export function Scene({ controlsRef }: SceneProps) {
         ref={controlsRef}
         enableDamping
         dampingFactor={0.05}
-        minDistance={3}
-        maxDistance={30}
-        maxPolarAngle={Math.PI / 2 - 0.1}
-        minPolarAngle={0.2}
+        minDistance={2}
+        maxDistance={45}
+        maxPolarAngle={Math.PI / 2 - 0.05}
+        minPolarAngle={0.1}
         target={[2, 1, 0]}
       />
     </Canvas>
